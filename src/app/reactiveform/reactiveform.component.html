@@ -1,0 +1,89 @@
+<div style="background-color: #c3c2c3; padding: 50px;">
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form [formGroup]="Contactform" (ngSubmit)="displaydata()" novalidate>
+            <div class="form-group">
+                <label for="FirstName">First Name</label>
+                <input type="text" class="form-control" name="firstname" id="firstname" formControlName="firstname">
+            </div>
+
+            <div *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)" class="alert alert-danger form-control">
+                   
+                <div [hidden]="!firstname.errors.required">
+                    First Name Required
+                </div>
+                <div [hidden]="!firstname.errors.minlength">
+                    minlength 4
+                </div>
+                <div [hidden]="!firstname.errors.maxlength">
+                    maxlength 10
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Lastname">Last Name</label>
+                <input type="text" class="form-control" name="lastname" id="lastname" formControlName="lastname">
+            </div>
+            <div *ngIf="!lastname?.valid && (lastname?.dirty || lastname?.touched)" class="alert alert-danger form-control">
+                <div [hidden]="!lastname.errors.required">
+                    Last Name Is Required
+                </div>
+                <div [hidden]="!lastname.errors.minlength">
+                    minlength 5
+                </div>
+                <div [hidden]="!lastname.errors.maxlength">
+                    maxlength 8
+                </div>
+            </div>
+            <div class="from-group">
+                <label for="EmailId">Email Id</label>
+                <input type="text" name="emailid" class="form-control" id="emailid" formControlName="emailid">
+            </div>
+            <div *ngIf="!emailid?.valid && (emailid?.dirty || emailid?.touched)" class="alert alert-danger form-control">
+                <div [hidden]="!emailid.errors.required">
+                    Email ID Required
+                </div>
+                <div [hidden]="!emailid.errors.email">
+                    Plesce enter valid email id
+                </div> 
+            </div>
+
+            <div class="from-group">
+                <label for="Mobile Namer">Mobile Number</label>
+                <input type="number" name="mobilenumber" id="mobilenumber" class="form-control" formControlName="mobilenumber">
+            </div>
+
+            <div formGroupName= "address">
+                <div class="from-group">
+                    <label for="city">City</label>
+                    <input type="text" name="city" id="city" class="form-control" formControlName="city">
+                </div>
+                <div class="form-group">
+                    <label for="Pincode">Pincode</label>
+                    <input type="number" name="pincode" id="pincode" class="form-control" formControlName="pincode">
+                </div>
+                <div class="form-group">
+                    <label for="street">Street</label>
+                    <input type="date" name="street" id="street" class="form-control" formControlName="street">
+                </div>
+            </div>
+            <br>
+            <button type="submit" class="btn btn-primary" [disabled]="!Contactform.valid">Submit</button>
+        </form>
+    </div>
+</div>
+</div>
+
+
+<!-- <form [formGroup]="Contactform" (ngSubmit)="displaydata()">
+    <label for="Firstname">First Name</label><br>
+    <input type="text" name="firstname" id="firstname" formControlName="firstname"><br>
+    <label for="Lastname">LastName</label><br>
+    <input type="text" name="lastname" id="lastname" formControlName="lastname"><br>
+    <label for="EmailID">Email ID</label><br>
+    <input type="email" name="emailid" id="emailid" formControlName="emailid"><br>
+    <button type="submit">Submit</button>
+</form> -->
+{{ Contactform.dirty}}
+{{ Contactform.valid}}
+{{ Contactform.invalid}}

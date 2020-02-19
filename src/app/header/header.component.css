@@ -1,0 +1,11 @@
+h1{
+    font-size: 25px;
+    color: blueviolet;
+}
+
+.pipe{
+    background: blueviolet;
+    font-size: 15px;
+    margin: 10px;
+    padding: 10px;
+}

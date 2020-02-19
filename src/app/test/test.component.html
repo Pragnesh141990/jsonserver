@@ -1,0 +1,53 @@
+<div class="color">
+<div class="row mar">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form #formControl="ngForm" (ngSubmit)=submiteddata(formControl)>
+         
+             <div class="from-group">
+                <label for="First Name">First Name</label>
+                <!-- <input type="text"  name="FirstName" #fname="ngModel" class="form-control" placeholder="Enetr First NAme" [(ngModel)]="MYNANE"> -->
+                <input type="text" name="FNAME" [(ngModel)]="mydata.FNAME" >
+            </div>
+            <div class="from-group">
+                <label for="First Name">Last Name</label>
+                <input type="text" [(ngModel)]="LASTNAME" name="LastName"  class="form-control"  >
+            </div>
+           <!-- <br>
+             <div class="from-group">
+                <label for="First Name">Last Name</label>
+                <input type="text" ngModel name="LastName"  class="form-control" placeholder="Enter Last Name">
+            </div>
+            <br>
+            <div class="from-group">
+                <label for="Email">Email</label>
+                <input type="email" ngModel name="Email" class="form-control" placeholder="Enter  Email">
+            </div>
+            <br>
+            <div class="form-grou">
+                <label for="password">Password</label>
+                <input type="password" ngModel name="Password" class="form-control" placeholder="*******">
+            </div>
+            <br>
+            <select name="country" (change)=getdata($event.target.value) >
+                
+    <option [ngValue]="item.name" *ngFor="let item of countrylist" [selected]="item.rr" >
+                    {{item.name}}
+                </option>
+            </select>
+            <br>
+            <br>  -->
+            <button type="submit"  class="btn btn-primary btm-md">Submit Data</button>
+            <button type="button" (click)="resetformdata(formControl)"class="btn btn-primary btm-md">RESET  FORM</button>
+            <!-- <button type="submit"  (click)="reset(formControl)" class="btn btn-primary btm-md">RESET  FORM</button>
+            <button type="button" (click)="setDefaults()">Set Defaults</button> -->
+        </form>
+    </div>
+</div>
+</div>
+{{ formControl.value |json}}
+{{ formControl.touched }}
+{{ formControl.dirty }}
+{{ formControl.pristine }}
+
+{{mydata.FNAME}}

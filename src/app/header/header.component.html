@@ -1,0 +1,27 @@
+<h1>This is Pipe </h1>
+<p>{{ "Pragnesh" | uppercase }}</p>
+<br>
+<p> {{ todaydate | date:'dd/MM/yy' }}</p><br>
+<p>Currency Pipe</p>
+<p>{{ 5000 | currency : "INR" }}</p>
+<p>Slice </p>
+<p>{{  name | slice : 0:5 }}</p>
+
+<p> Titale Case </p>
+<p> {{ "Pragnesh Kadia" | titlecase }}</p>
+
+<h1>Custome Dricetive</h1>
+<p appMydirectrive></p>
+
+<h1>Structure Directive</h1>
+<div [ngStyle]="pintu">
+    <ul *ngFor="let n of item">
+        <li> {{ n }} </li>
+    </ul>
+</div>
+
+<div [ngClass]="'pipe'">
+    <ul *ngFor="let n of item">
+        <li> {{ n }} </li>
+    </ul>
+</div>

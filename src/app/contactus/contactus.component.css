@@ -1,0 +1,34 @@
+.grediant{
+    /* background: linear-gradient(#159957, #155799); */
+    background-color: #eee;
+    height: 100vh;
+    max-width: 100%;
+}
+.jasondata{
+    text-align: center;
+    margin-top: 80px;
+    padding: 30px;
+    border: 1px solid #fff;
+}
+input.ng-touched{
+    background-color: darkorchid;
+}
+
+input.ng-pristine:hover{
+    background-color: #fff;
+}
+
+input.ng-pristine{
+     background-color: aqua;
+}
+.alert{
+    text-align: center;
+    line-height: 10PX;
+    margin-top: 10PX;
+}
+.alert:hover{
+    text-transform: uppercase;
+    color: brown;
+    font-weight: 700;
+    cursor: pointer;
+}

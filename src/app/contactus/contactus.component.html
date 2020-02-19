@@ -1,0 +1,77 @@
+<div class="grediant">
+    <div class="container">
+        <br>
+        <br/>
+<div class="row">
+    <div class="col-md-3"></div>
+    <div class="col-md-6">
+        <form #formcontrol="ngForm" (ngSubmit)="submitdata(formcontrol)" novalidate>
+            <div class="form-group">
+                <label for="First Name">First Name </label>
+                <input type="text" class="form-control"  name="firstname"  minlength="3" maxlength="5" [(ngModel)]="mydata.firstname" #firstname="ngModel" pattern="^[a-zA-Z]" required  />
+                <div *ngIf="!firstname?.valid && (firstname?.dirty || firstname?.touched)" class="alert alert-danger form-control">
+                   
+                    <div *ngIf="firstname.errors.required">
+                        First Name Required
+                    </div>
+                    <div *ngIf="firstname.errors.minlength">
+                        firstname minlength is {{ firstname.errors.minlength?.requiredLength }}
+                    </div>
+                    <!-- <div *ngIf="firstname.errors.maxlength">
+                        firstname maxlength is {{ firstname.errors.maxlength?.requiredLength }}
+                    </div> -->
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="Last Name">Last Name :</label>
+                <input type="text" name="lastname"   class="form-control" minlength="3" [(ngModel)]="mydata.lastname" #lastname="ngModel" required />
+                <div *ngIf="!lastname?.valid && (lastname?.dirty || lastname?.touched)" class="alert alert-danger form-control">
+
+                    <div *ngIf="lastname.errors.required">
+                        lastname Name Required
+                    </div>
+                    <div *ngIf="lastname.errors.minlength">
+                        lastname minlength is {{ lastname.errors.minlength?.requiredLength }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Eail ID">Email ID :</label>
+                <input type="email" class="form-control"  name="emailid" [(ngModel)]="mydata.email" #emailid="ngModel" required  email />
+                <div *ngIf="!emailid?.valid && (emailid?.dirty || emailid?.touched)" class="alert alert-danger form-control">
+                    <div *ngIf="emailid.errors.required">
+                        emailid Required 
+                    </div>
+                    <div *ngIf="emailid.errors.email">
+                        Invalid Email
+                    </div> 
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="Mobile Number">Mobile Number</label>
+                <input type="number" class="form-control" name="mobilenumber" maxlength="5"  [(ngModel)]="mydata.mobilenumber"  #mobilenumber="ngModel" required />
+                <div *ngIf="!mobilenumber?.valid && (mobilenumber?.dirty || mobilenumber?.touched)" class="alert alert-danger form-control">
+                    <div ngIf="mobilenumber.errors.requiredLength">
+                        Mobile number Required
+                    </div>
+                    <div ngIf="mobilenumber.errors.maxlength">
+                            mobilenumber maxlength is {{ mobilenumber.errors.maxlength?.maxlength }}
+                    </div>
+                </div>
+            </div>
+
+                <button type="submit" class="btn btn-primary" [disabled]="!formcontrol.valid">Submit data</button>&nbsp;&nbsp;
+                <button type="button" class="btn btn-danger" (click)="resetformdata(formcontrol)">Reseat</button>
+        </form>
+    </div>
+</div>
+<div class="jasondata">
+{{ formcontrol.value | json }}<br>
+{{ formcontrol.touched }} ||  {{ formcontrol.dirty }} || {{ formcontrol.pristine }}
+<br>
+{{ mydata.firstname }}
+</div>
+</div>
+</div>
