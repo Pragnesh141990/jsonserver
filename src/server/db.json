@@ -1,0 +1,37 @@
+{
+    "employee":[{
+        "id":1,
+        "fisrtname":"pragnesh",
+        "lastname":"kadia",
+        "mobileno":"8980137690",
+        "email":"pragnesh@gmail.com"
+    },
+    {
+        "id":2,
+        "fisrtname":"pratik",
+        "lastname":"sathvara",
+        "mobileno":"8912345678",
+        "email":"pratik@gmail.com"
+    },
+    {
+        "id":3,
+        "fisrtname":"pratik",
+        "lastname":"sathvara",
+        "mobileno":"8912345678",
+        "email":"pratik@gmail.com"
+    },
+    {
+        "id":4,
+        "fisrtname":"pratik",
+        "lastname":"sathvara",
+        "mobileno":"8912345678",
+        "email":"pratik@gmail.com"
+    },
+    {
+        "id":5,
+        "fisrtname":"pratik",
+        "lastname":"sathvara",
+        "mobileno":"8912345678",
+        "email":"pratik@gmail.com"
+    }
+]}

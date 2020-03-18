@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
+import { CryptoService } from '../crypto.service'
+import { from } from 'rxjs';
 
 @Component({
   selector: 'app-reactiveform',
@@ -9,10 +11,12 @@ import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms'
 
 export class ReactiveformComponent implements OnInit {
   title="Reactive Form";
-  Contactform:FormGroup;
+  Contactform:FormGroup;  
+  pp:string;
+  pk:number;
 
-  constructor(private formbuilder:FormBuilder) { }
-
+  constructor(private formbuilder:FormBuilder , private myservices:CryptoService) { }
+  
   ngOnInit( ) {
     // this.Contactform=new FormGroup({
     //   firstname:new FormControl(),
@@ -36,9 +40,12 @@ export class ReactiveformComponent implements OnInit {
         pincode:[''],
         street:['']
       })
-
-
+      
     })
+    
+    this.pp=this.myservices.myname("Pragnesh","Kadiya");
+    this.pk=this.myservices.myname1(10, 30);
+
   }
 get firstname(){
   return this.Contactform.get('firstname');

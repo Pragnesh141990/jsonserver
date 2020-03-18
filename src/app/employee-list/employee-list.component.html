@@ -1,0 +1,22 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table">
+                <tr class="bg-dark text-white text-center">
+                    <td>ID</td>
+                    <td>FirstName</td>
+                    <td>LastName</td>
+                    <td>Mobile No.</td>
+                    <td>Email</td>
+                </tr>
+                <tr *ngFor="let pragnesh of mydata" class="text-center border">
+                    <td>{{pragnesh.id}}</td>
+                    <td>{{pragnesh.firstname}}</td>
+                    <td>{{pragnesh.lastname}}</td>
+                    <td>{{pragnesh.mobileno}}</td>
+                    <td>{{pragnesh.email}}</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
